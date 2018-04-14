@@ -8,27 +8,31 @@ b='B'
 axiom='A'
 sentence=''
 
-generation=int(sys.argv[1])
 
-sentence=axiom
-# string=axiom
-# print(string)
+if(len(sys.argv) is 1):
+	generation=int(input('Enter the number of generations:'))
+else:
+	generation=int(sys.argv[1])
 
-def generate(sent,gen):
-	sent=axiom
+
+def generate(_sent,_gen,_rules):
+	_sent=axiom
 	string=''
+	rulesList=list(_rules)
+
 	print('Generation 0 : '+axiom)
-	for i in range(gen):
-		for char in sent:
-			if char is a:
-				string+=rules[a]
-			elif char is b:
-				string+=rules[b]
-		sent=string
+	for i in range(_gen):
+		for char in _sent:
+			for rule in range(len(_rules)):
+				if char is rulesList[rule]:
+					string+=rules[rulesList[rule]]
+
+		_sent=string
 		string=''
-		print('Generation '+str(i+1)+' : '+sent)
-	return sent
+		print('Generation '+str(i+1)+' : '+_sent)
+	return _sent
+
 
 if __name__=="__main__":
-	LString=generate(sentence,generation)
+	LString=generate(sentence,generation,rules)
 	print("Final "+LString)
