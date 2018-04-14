@@ -12,7 +12,7 @@ else:
 	generations=int(sys.argv[1])
 
 
-def generate(_axiom,_gens,_rules,_sent):
+def Generate(_axiom,_gens,_rules,_sent):
 	_sent=_axiom
 	string=''
 	rulesList=list(_rules)
