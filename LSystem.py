@@ -5,8 +5,8 @@ from Stack import *
 turtleStack = Stack()
 
 def draw(_sent,_rules):
-	step=2
-	angle=45
+	step=8
+	angle=22.5
 	turtle=Turtle()
 	turtle.hideturtle()
 	turtle.speed(0)
@@ -16,15 +16,16 @@ def draw(_sent,_rules):
 	# turtle.onclick(turtle.update())
 
 	for char in _sent:
-		if (char is 'F'):
+		if (char is 'F' or char is 'A' or char is 'B'):
 			turtle.pd()
 			turtle.fd(step)
-		elif(char is '+'):
-			turtle.rt(angle)
 		elif(char is '-'):
+			turtle.rt(angle)
+		elif(char is '+'):
 			turtle.lt(angle)
 		elif(char is 'f'):
 			turtle.pu()
+			turtle.fd(step)
 		elif(char is '['):
 			turtleStack.push(turtle.heading())
 			turtleStack.push(turtle.pos())
