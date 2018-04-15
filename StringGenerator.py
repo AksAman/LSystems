@@ -1,10 +1,16 @@
 import sys
 
+# Boxes
 # rules={'F':'F+F-F-F+F'}
 # axiom='F'
-rules={'X':'F+[[X]-X]-F[-FX]+X','F':'FF'}
-axiom='X'
 
+# Plant
+# rules={'X':'F+[[X]-X]-F[-FX]+X','F':'FF'}
+# axiom='X'
+
+# Fractal Tree
+rules={'F':'FF','0':'F[-0]+0'}
+axiom='0'
 
 def Generate(_axiom,_rules):
 	_sent=_axiom
