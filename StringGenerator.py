@@ -2,7 +2,7 @@ rules={'A':'AB','B':'A'}
 
 import sys
 
-axiom='A'
+axiom='AC'
 sentence=''
 
 
@@ -16,6 +16,7 @@ def Generate(_axiom,_gens,_rules,_sent):
 	_sent=_axiom
 	string=''
 	rulesList=list(_rules)
+	found=False
 
 	print('Generation 0 : '+axiom)
 	for i in range(_gens):
@@ -23,6 +24,10 @@ def Generate(_axiom,_gens,_rules,_sent):
 			for rule in range(len(_rules)):
 				if char is rulesList[rule]:
 					string+=rules[rulesList[rule]]
+					found=True
+			if(not found):
+				string+=char
+			found=False
 		_sent=string
 		string=''
 		print('Generation '+str(i+1)+' : '+_sent)
@@ -30,5 +35,5 @@ def Generate(_axiom,_gens,_rules,_sent):
 
 
 if __name__=="__main__":
-	LString=generate(axiom,generations,rules,sentence)
+	LString=Generate(axiom,generations,rules,sentence)
 	print("Final "+LString)
