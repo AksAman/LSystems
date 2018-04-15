@@ -1,23 +1,17 @@
-rules={'A':'AB','B':'A'}
-
+rules={'F':'F+F-F-F+F'}
+axiom='F'
 import sys
 
-axiom='AC'
-sentence=''
-
-
-if(len(sys.argv) is 1):
-	generations=int(input('Enter the number of generations:'))
-else:
-	generations=int(sys.argv[1])
-
-
-def Generate(_axiom,_gens,_rules,_sent):
+def Generate(_axiom,_rules):
 	_sent=_axiom
 	string=''
 	rulesList=list(_rules)
 	found=False
 
+	if(len(sys.argv) is 1):
+		_gens=int(input('Enter the number of generations:'))
+	else:
+		_gens=int(sys.argv[1])
 	print('Generation 0 : '+axiom)
 	for i in range(_gens):
 		for char in _sent:
@@ -32,8 +26,3 @@ def Generate(_axiom,_gens,_rules,_sent):
 		string=''
 		print('Generation '+str(i+1)+' : '+_sent)
 	return _sent
-
-
-if __name__=="__main__":
-	LString=Generate(axiom,generations,rules,sentence)
-	print("Final "+LString)
