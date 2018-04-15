@@ -1,6 +1,10 @@
-rules={'F':'F+F-F-F+F'}
-axiom='F'
 import sys
+
+# rules={'F':'F+F-F-F+F'}
+# axiom='F'
+rules={'X':'F+[[X]-X]-F[-FX]+X','F':'FF'}
+axiom='X'
+
 
 def Generate(_axiom,_rules):
 	_sent=_axiom
