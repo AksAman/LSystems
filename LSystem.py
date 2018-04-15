@@ -4,9 +4,9 @@ from Stack import *
 
 turtleStack = Stack()
 
-def draw(_sent,_rules):
+def draw(_sent,_angle):
 	step=8
-	angle=22.5
+	angle=_angle
 	turtle=Turtle()
 	turtle.hideturtle()
 	turtle.speed(0)
@@ -40,5 +40,7 @@ def draw(_sent,_rules):
 
 
 if __name__=="__main__":
-	sentence = Generate(axiom,rules)
-	draw(sentence,rules)
+	ruleAngle=Generate()
+	sentence = ruleAngle[0]
+	angle=ruleAngle[1]
+	draw(sentence,angle)
